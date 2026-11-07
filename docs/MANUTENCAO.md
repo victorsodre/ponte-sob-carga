@@ -2,36 +2,27 @@
 
 ## Antes de cada entrega
 
-- Conferir fonte/data das explicações e a distinção entre ilustração e medição.
-- Validar assets, créditos e termos, incluindo autorização para servir arquivos extraíveis no navegador.
-- Executar os checks que a aplicação realmente tiver; registrar comandos e resultado. Atualmente este repositório só contém documentos.
-- Revisar diff, evitar segredos e incluir apenas mudanças da tarefa. Não adicionar diretórios de configuração pessoal, tokens ou snapshots de sessão.
-- Testar URL de vídeo, acesso às fontes, carregamento, fallback e navegação por teclado.
-- Conferir visualmente 1440×900, 390×844 e orientação horizontal; usar ao menos um navegador desktop e um celular real quando disponível. Registrar dispositivo e limitações.
-- Exercitar selecionar → isolar → reenquadrar → cortar/desmontar → montar → reset. Câmera deve conservar o objeto visível.
-- Testar mecanismo no início, meio, fim, pausa, retomada, reset e alternância de aba. Ausência de NaN e poses acumuladas é critério funcional.
-- Comparar captura inicial, seleção, corte e desmontagem com o guia visual. Validar som desligado e movimento reduzido.
+1. Ler DECISOES.md, APURACAO.md e VALIDACAO.md. Atualizar fontes antes de mudar fatos/equações.
+2. Executar `npm ci`, `npm test`, `npm run check`, `npm run build`; revisar diff e créditos.
+3. Em desktop e móvel: posição nos dois apoios e no centro, intensidade 0/50/100%, vistas original/deformada/comparação, fatores 1/40/80, pausa/fim/reset.
+4. Conferir equilíbrio: reações somam a intensidade relativa; carga no centro distribui igualmente. Ampliar a imagem não muda reações. No zero, deformação e setas de força somem.
+5. Selecionar/isolar/reaproximar/retornar os seis grupos, buscar com acentos, completar tour, usar clique e teclado. Verificar movimento reduzido.
+6. Conferir cena/capturas reais em 1440×900, 390×844, 360×800 e horizontal. Registrar aparelho/navegador; emulação não substitui teste físico.
+7. Exportar PNG horizontal e vertical em original e comparação; validar marca, fator atual, objeto inteiro e restauração da câmera.
+8. Servir `dist/` em subpasta; testar recarga, recursos/fontes/licenças locais, fallback sem WebGL, perda de contexto e pausa em aba oculta.
 
-## Testes proporcionais
+## Invariantes de regressão
 
-Unitários para o estado do mecanismo, limites e transforms quando forem implementados. Integração para catálogo/nós do asset e retorno ao estado inicial. Fluxo de navegador para carregar, interagir e resetar. Não criar testes que apenas repitam o texto destes guias.
+- Apoios sem deslocamento vertical; rotação livre na idealização. Acessos/pilares não deformam.
+- Fórmula contínua na carga e simétrica quando carga é espelhada; solução central `-β/48`, linearidade e relação momento/curvatura conferidas em testes.
+- Deformação parte dos vértices de origem, sem deriva. Referência tracejada permanece na forma original.
+- Caminhão é cenográfico; não apresentar resultado como cálculo de duas cargas de eixo, tonelagem real ou capacidade segura.
+- Não inserir ruptura, impacto, mapa de tensão ou tipologia diferente sem nova apuração e mudança explícita do escopo.
 
-## Rotina após lançamento
+## Dependências, publicação e reversão
 
-- A cada mudança de modelo: revisar IDs, pivôs, nomes, enquadramento, memória e créditos.
-- A cada mudança de dependência: repetir build e fluxos essenciais; comparar imagens antes/depois.
-- A cada mudança factual: atualizar a fonte e textos, incluindo capturas/posts ainda não publicados.
-- Em revisão periódica: conferir links, disponibilidade de vídeos e situação das fontes. Datas dinâmicas, especialmente Voyager, exigem reconsulta explícita.
-- Registrar bug com dispositivo, navegador, ação, resultado esperado/observado e evidência sem dados pessoais.
+Ao atualizar Three/Vite/React: repetir testes/build e fluxos críticos, comparar imagens e orçamento. Atualização de marca começa no guia e nos tokens oficiais. Logs e capturas ficam em `output/`, ignorado pelo Git; resumo durável em VALIDACAO.md.
 
-## Publicação e reversão
+Nenhum deploy automático. Para publicar, preparar commit/build/URL e confirmar autorização vigente. Registrar URL e verificação quando existir; manter versão anterior para reversão por novo deploy. Repositório privado e aplicativo público são decisões independentes. Não publicar POSTAGENS-X.md automaticamente.
 
-Publicar aplicativo é uma etapa futura. Preparar build revisável, checks e URL alvo; confirmar que o pedido vigente autoriza o deploy. Não habilitar publicação automática apenas porque a documentação foi enviada ao GitHub.
-
-Quando houver deploy, registrar commit, build, URL, data e verificação do caminho público. Manter release anterior para reversão por novo deploy; não reescrever histórico compartilhado. Mudança de visibilidade do repositório é independente de publicar o aplicativo.
-
-## Medição do piloto
-
-Se a medição for implementada e autorizada, observar em 7 e 28 dias: visitas à experiência, primeira interação, uso da ação principal e cliques para o vídeo. Evitar coletar placas, imagens pessoais ou identificadores desnecessários. Views dos vídeos não medem uso do aplicativo.
-
-Usar a combinação de qualidade, uso e custo de manutenção para ajustar o próximo projeto. Não prometer crescimento ou patrocínio com base no alcance histórico.
+Medição pública, se solicitada, pode observar primeira interação, uso da comparação e clique no vídeo; views históricas não medem uso do aplicativo. Não coletar dados pessoais sem necessidade.

@@ -1,60 +1,24 @@
-# Lista de execução — Ponte sob carga
+# Lista de execução — ponte sob carga
 
-Status de todas as etapas: **pendente de implementação**. Marcar somente após conferir a entrega correspondente. Prioridade da coleção: 10/10.
+Desenvolvimento concluído em 07/11/2026. Evidências em VALIDACAO.md.
 
-## 1. Apuração e decisão de escopo
+- [x] Escolher viga simplesmente apoiada; consultar fonte primária e conferir diagramas/equações antes de animar.
+- [x] Documentar carga pontual, rigidez constante, pequenas deformações e limites; validar equilíbrio e caso central conhecido.
+- [x] Criar seis conjuntos autorais, pivôs, vértices de origem, materiais e créditos.
+- [x] Implementar posição/intensidade, travessia, pausa, fim e reset determinísticos.
+- [x] Comparar forma original/deformada, ampliação explícita e reações sem alterar o cálculo pela apresentação.
+- [x] Implementar seleção por lista/clique, isolamento, câmera, busca, tour e malha.
+- [x] Aplicar marca/fontes oficiais, responsividade e controles de teclado.
+- [x] Respeitar movimento reduzido/aba oculta, tratar falta de WebGL/perda de contexto. Áudio não integra o escopo.
+- [x] Conferir capturas reais desktop/móvel emulado e PNGs 16:9/9:16 com legenda de ampliação.
+- [x] Validar testes, TypeScript, build em subpasta, recarga, recursos locais e exportação.
+- [x] Atualizar guias, limitações e rascunhos do X para a versão entregue.
 
-- [ ] Escolher uma tipologia e validar um diagrama com carga móvel antes de animar a malha.
-- [ ] Resolver as pesquisas listadas em ASSETS-E-FONTES.md e registrar fonte, data, afirmação e limite.
-- [ ] Fechar a pergunta, os grupos e as três ações de ESCOPO.md.
+## Etapas posteriores
 
-**Pronto quando:** uma página de esquema permite revisar o funcionamento e suas simplificações antes de modelar.
+- [ ] Testar telefone físico e Safari quando disponíveis.
+- [ ] Escolher URL/hospedagem e publicar somente com autorização.
+- [ ] Victor publicar os rascunhos manualmente; registrar permalinks.
+- [ ] Se solicitado, definir medição de uso e revisão em 7/28 dias.
 
-## 2. Modelo e contrato de peças
-
-- [ ] Modelo procedural de uma tipologia simples; forma indeformada e forma de comparação separadas, com nomes estáveis dos elementos.
-- [ ] Conferir licença de entrega web, escala, orientação, pivôs, materiais, nomes e créditos.
-- [ ] Criar catálogo estável; registrar pose inicial e grupos selecionáveis.
-
-**Pronto quando:** o objeto pode ser inspecionado e cada conjunto tem origem e função documentadas. Se o asset não servir, reduzir escopo ou modelar; não improvisar interior como se fosse fiel.
-
-## 3. Primeiro mecanismo funcional
-
-- [ ] Implementar o estado descrito em ESCOPO.md com geometria simples.
-- [ ] Demonstrar início, meio, fim, pausa, retomada e reset.
-- [ ] Validar os critérios específicos e registrar as hipóteses do modelo.
-
-**Pronto quando:** uma captura real mostra a resposta à pergunta sem depender de acabamento visual.
-
-## 4. Exploração e identidade
-
-- [ ] Aplicar o guia visual, logo oficial e layout responsivo.
-- [ ] Implementar seleção por lista/clique, isolamento, reenquadramento e modos pertinentes.
-- [ ] Adicionar explicações curtas, fontes e ligação com os vídeos.
-
-**Pronto quando:** o visitante encontra o primeiro controle, entende a seleção e retorna à cena inicial em desktop e celular.
-
-## 5. Acabamento e desempenho
-
-- [ ] Conferir enquadramento, materiais, luz, sombras e contraste em capturas reais.
-- [ ] Implementar áudio opcional e movimento reduzido, quando houver animação/som.
-- [ ] Medir orçamento de assets e renderização; tratar falhas de rede/WebGL.
-
-**Pronto quando:** os fluxos de MANUTENCAO.md passam no dispositivo de referência, com medidas e limitações registradas.
-
-## 6. Entrega revisável
-
-- [ ] Registrar comandos reais de setup/check/build no README após implementar o código.
-- [ ] Revisar diff, créditos, texto factual e estados dos controles.
-- [ ] Preparar prévia e instruções de reversão; documentar a URL somente quando existir.
-
-**Pronto quando:** outra pessoa consegue reproduzir a versão e verificar o resultado. Deploy depende de autorização no pedido vigente.
-
-## 7. Divulgação e aprendizado
-
-- [ ] Capturar demonstração verdadeira, sem prometer recursos ausentes.
-- [ ] Revisar POSTAGENS-X.md e substituir informações de lançamento pela versão real.
-- [ ] Publicar apenas quando Victor decidir; registrar permalink depois do envio.
-- [ ] Se houver medição, revisar uso em 7/28 dias e decidir o próximo incremento.
-
-**Estimativa:** Médio: geometria simples; modelo explicativo e honestidade da deformação exigem revisão. Não fixar dias de entrega antes das etapas 1 e 2.
+Nenhuma etapa de publicação foi executada. Reversão por versão anterior e novo build, sem reescrever histórico.

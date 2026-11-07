@@ -1,71 +1,26 @@
-# Arquitetura proposta
+# Arquitetura implementada
 
-Documento de planejamento. Nenhum comando de build ou teste existe ainda neste repositório.
+React 19.2.6, TypeScript 5.9.3, Three.js 0.187.0, Vite 8.3.6. Lockfile versionado, Node ≥22.18. Aplicação estática, `base: './'`; sem backend, LLM, analytics ou recursos remotos no carregamento.
 
-## Base
+## Responsabilidades
 
-React + TypeScript + Three.js + Vite, como referência do Fusquinha. Fixar versões e lockfile no início da implementação, após verificar compatibilidade atual e licença do código reaproveitado. Não adotar a versão antiga do Three apenas por cópia automática.
-
-Aplicação estática executada no navegador do visitante. O MVP não requer LLM, backend nem GPU de produção permanentemente alocada. Modelagem e processamento de assets são tarefas separadas e delimitadas.
-
-## Organização sugerida
-
-```text
-src/
-  app/              composição da tela e estados de carregamento
-  scene/            cena, câmera, iluminação e renderização
-  interactions/     seleção, isolamento, corte e desmontagem
-  simulation/       estado determinístico do mecanismo educativo
-  content/          catálogo, explicações, vídeos e fontes
-  ui/               controles HTML acessíveis
-  styles/           tokens do ovictorlab e layout
-public/
-  models/           somente arquivos com entrega web autorizada
-  audio/            sons licenciados, carregados sob demanda
-  fonts/            fontes locais e respectivas licenças
-```
-
-Criar só o que o piloto utilizar. Começar independente; extrair um pacote compartilhado depois que o segundo projeto comprovar reutilização concreta.
+- `simulation/beam.ts`: estado de posição/intensidade, limites, relógio, reações e solução analítica da viga simplesmente apoiada. Equações/hipóteses em APURACAO.md.
+- `scene/model.ts`: seis grupos, tabuleiro segmentado, duas vigas visuais, apoios articulado/móvel, pilares, juntas e caminhão autorais. Guarda posições originais dos vértices.
+- `scene/rig.ts`: aplica deslocamentos a partir dos vértices originais, atualiza normais/limites, posição e inclinação do veículo, assentos e setas. Nunca acumula deformação.
+- `scene/runtime.ts`: câmera, órbita, picking, isolamento, modo malha, renderização sob demanda, recuperação por recarga após perda de contexto.
+- `scene/camera.ts`/`capture.ts`: enquadramento e PNG 1920×1080 ou 1080×1920 com marca e fator visual atual. Câmera restaurada após captura.
+- `App.tsx`: relógio e UI, busca, tour, teclado, reset, movimento reduzido e modais. `content/`: catálogo e fontes. `ui/`: controles HTML e marca. `styles.css`: identidade e responsividade.
 
 ## Contratos
 
-- Peça: `id`, `label`, `groupId`, nós do modelo, pose de origem, descrição e referências. IDs estáveis entre atualizações.
-- Seleção: um catálogo determina o que pode ser selecionado; elementos auxiliares não capturam clique por acidente.
-- Desmontagem: transformação deriva de pose de origem e progresso 0–1; nunca acumula deslocamento a cada frame. Corte e desmontagem são modos distintos.
-- Mecanismo: estado serializável, limites explícitos, pausa e reset. Tempo de animação não depende de quantidade de frames.
-- Fontes: título, instituição/autor, URL, data de consulta, afirmação suportada e limite. Texto da interface aponta para esse catálogo.
-- Áudio: inicia após gesto, tem volume/mute e para com cena oculta ou mecanismo desligado.
+`BeamState = {loadPosition, loadLevel}`, ambos entre 0 e 1. Inicial: centro do vão, intensidade 0,75, comparação ×80, pausado. A travessia avança até 1 e para; novo início no fim retorna a 0. Não há loop automático. Passo temporal limitado a 100 ms; velocidade visual não participa da resposta quase estática.
 
-## O que avaliar no Fusquinha
+`ShapeView = original | deformed | compare`; ampliação 1/40/80. Forma original zera somente deslocamento visual. Comparação acrescenta as duas bordas retas originais do tabuleiro. Fator visual não modifica reações ou hipóteses. Entrada HTML limitada e sanitização numérica nas funções públicas.
 
-`src/VehicleScene.tsx`: renderização/câmera/seleção. `src/catalog.ts`: agrupamento. `src/layout.ts`: posições e enquadramento. `src/vehicle-rig.ts`: pivôs e articulação. `src/vehicle-sounds.ts`: áudio. `src/engine-motion.ts`: movimento e pausa. Esses arquivos são referências de implementação, não garantem uma biblioteca pronta para outros objetos.
+IDs estáveis: `deck`, `girders`, `bearings`, `piers`, `joints`, `vehicle`. Duas vigas desenhadas seguem uma curva equivalente; nenhuma distribuição transversal é inferida. Somente tabuleiro/vigas deformam; pilares e acessos ficam fixos. Apoios permanecem na cota de origem, assentos inclinam ilustrativamente. Veículo acompanha os pontos da superfície sob os eixos cenográficos, embora o cálculo use uma única força resultante.
 
-Antes de copiar, conferir responsabilidades, licenças e dependências. Motor, material, cenário e GLB do Fusquinha não pertencem automaticamente ao novo projeto.
+## Desempenho e operação
 
-## Orçamento inicial de desempenho
+DPR ≤1,5; sombra 1024²; atualização limitada a 30 Hz. Geometria autoral leve, estáticos agrupados, deformação determinística. Cena não renderiza continuamente em repouso e suspende em aba oculta. Limite de frequência não é garantia de FPS móvel. Medidas em VALIDACAO.md.
 
-Metas propostas a validar no primeiro protótipo, não resultados já medidos:
-
-- Cena em aproximadamente 30 fps durante interação no dispositivo móvel de referência registrado.
-- Renderização sob demanda quando parada; suspender trabalho em aba oculta.
-- Começar com DPR limitado a 1,5 no celular, texturas de 1K quando suficientes e cena progressiva. Ajustar por medição visual e de memória.
-- Buscar até 10 MB comprimidos para a primeira cena útil; qualquer exceção precisa de comparação antes/depois e carregamento progressivo.
-- Medir modelo, texturas, draw calls e tempo até o primeiro controle utilizável. Evitar simulação física genérica quando uma cinemática determinística explica o fenômeno.
-
-## Entrega futura
-
-Build estático com caminhos relativos ou base configurável; testar recarga direta e hospedagem em subpasta. Integração com ovictorlab.com pode usar rota ou link, a decidir quando houver aplicação pronta. Não alterar o site principal durante o desenvolvimento inicial.
-
-Captura PNG é uma possibilidade herdada do Fusquinha. Presets de câmera 16:9 e 9:16 e tour guiado são extensões planejadas; não estão implementados. Gravar vídeo exige validar o método de captura e sincronização do som.
-
-## Implementação específica
-
-Geometria: Modelo procedural de uma tipologia simples; forma indeformada e forma de comparação separadas, com nomes estáveis dos elementos.
-
-Estado proposto: `loadPosition e loadLevel determinam uma configuração estável; reset restaura carga e forma; animation não altera hipóteses do modelo.`
-
-Invariantes que devem orientar código e testes:
-
-- O tipo de apoio e a forma deformada são coerentes com a tipologia e hipóteses escolhidas.
-- A ampliação visual aparece na interface e não pode ser confundida com deslocamento real.
-- Não fornecer dimensionamento, capacidade segura ou diagnóstico de ponte existente.
+Fontes e licenças locais; créditos acessíveis mesmo sem WebGL. PNG guarda marca, legenda de forma/fator e modelo idealizado. Sem som. Publicação depende de autorização própria; nenhum deploy no push. Reuso de UI/câmera da coleção do usuário; site principal e Fusquinha preservados.

@@ -1,6 +1,6 @@
 # Ponte sob carga
 
-> **Estado: documentação inicial.** Aplicação ainda não implementada. Planejamento criado em 2026-11-07; prioridade recomendada 10/10.
+> **Desenvolvimento concluído e validado localmente em 07/11/2026.** Aplicação estática, repositório privado e sem deploy público. Projeto 10/10 da coleção.
 
 **O que muda numa ponte quando um veículo passa?**
 
@@ -20,16 +20,35 @@ O canal já tem um vídeo longo sobre pontes, com 239 visualizações na consult
 1. [Escopo e critérios de conclusão](docs/ESCOPO.md).
 2. [Lista de execução](docs/EXECUCAO.md).
 3. [Identidade visual do ovictorlab](docs/IDENTIDADE-VISUAL.md).
-4. [Arquitetura proposta e reaproveitamento do Fusquinha](docs/ARQUITETURA.md).
-5. [Assets, fontes e pendências de apuração](docs/ASSETS-E-FONTES.md).
+4. [Arquitetura implementada e reaproveitamento do Fusquinha](docs/ARQUITETURA.md).
+5. [Assets e fontes verificadas](docs/ASSETS-E-FONTES.md).
 6. [Manutenção, validação e publicação futura](docs/MANUTENCAO.md).
 7. [Decisões e estado do projeto](docs/DECISOES.md).
 8. [Textos para o X](POSTAGENS-X.md) e [ordem da coleção](docs/COLECAO.md).
 
-**Próxima ação:** Escolher uma tipologia e validar um diagrama com carga móvel antes de animar a malha.
+## Executar e conferir
 
-**Esforço relativo:** Médio: geometria simples; modelo explicativo e honestidade da deformação exigem revisão. Prazo só deve ser estimado depois da validação de modelo e fontes.
+Node ≥22.18. Dependências fixadas no lockfile.
 
-## O que esta entrega inclui
+```sh
+npm ci
+npm run dev
+npm test
+npm run check
+npm run build
+npm run preview
+```
 
-Guias de desenvolvimento e manutenção, identidade visual, limites de escopo e rascunhos de divulgação. Não há aplicação, modelo 3D novo, licença de asset adquirida ou site publicado. Os repositórios foram preparados para trabalho independente, inicialmente privado. Não existe `npm install`, `npm test` ou deploy a executar nesta fase.
+Build estático em `dist/`, com caminhos relativos e suporte a subpasta. Sem backend, LLM ou GPU de produção. [Apuração e equações](docs/APURACAO.md) · [Validação](docs/VALIDACAO.md) · [Direção visual](docs/DIRECAO-VISUAL.md).
+
+## O que funciona
+
+- Carga móvel por slider, três posições e travessia com pausa e parada no fim. Intensidade relativa 0–100%.
+- Forma original, deformada e comparação com referência tracejada. Ampliação ×1, ×40 ou ×80, sempre identificada.
+- Reações relativas dos dois apoios, atualizadas por equilíbrio estático. Sem cálculo de tonelagem ou capacidade segura.
+- Seis conjuntos, seleção por lista/clique, isolamento, câmera, busca, tour, malha, reset e PNG horizontal/vertical.
+- Teclado, movimento reduzido, pausa em aba oculta, renderização sob demanda e explicações acessíveis sem WebGL. Sem áudio ou autoplay.
+
+**Limites:** uma viga equivalente idealizada de rigidez constante e uma carga pontual; caminhão cenográfico. Não simula distribuição entre eixos, peso próprio, impacto, vibração, ruptura ou distribuição transversal. Geometria e intensidade sem escala real. Não é ferramenta de dimensionamento ou diagnóstico. Celular emulado no Chrome, sem ensaio em telefone físico/Safari.
+
+**Próxima etapa fora da implementação:** escolher hospedagem e autorizar publicação, se desejado. Posts permanecem rascunhos para Victor publicar posteriormente.

@@ -1,5 +1,7 @@
 # Escopo — Ponte sob carga
 
+**Estado:** implementado; critérios conferidos em VALIDACAO.md.
+
 ## Pergunta e resultado esperado
 
 O que muda numa ponte quando um veículo passa? O visitante deve conseguir explicar o mecanismo depois de explorar a cena e acionar seus controles.
@@ -15,11 +17,11 @@ Um único tipo estrutural, com apoios, tabuleiro e carga móvel. Deformações a
 - Juntas
 - Veículo/carga cenográfica
 
-Esses grupos são uma proposta semântica; validar sua correspondência com a geometria e as fontes antes de nomear peças como reais.
+Seis grupos implementados em geometria autoral. Tipologia escolhida: ponte de vigas representada como viga equivalente Euler–Bernoulli, simplesmente apoiada e com rigidez constante. APURACAO.md registra as hipóteses.
 
 ## Ações principais
 
-| Controle | Comportamento planejado |
+| Controle | Comportamento implementado |
 |---|---|
 | Mover carga | Desloca o veículo ao longo do vão e atualiza a demonstração. |
 | Destacar estrutura | Seleciona os elementos e sua função. |
@@ -38,7 +40,7 @@ Base de exploração: órbita, zoom, seleção por lista ou clique, isolamento, 
 - Não fornecer dimensionamento, capacidade segura ou diagnóstico de ponte existente.
 
 - A pergunta inicial é respondida por uma interação observável, com texto curto e fontes acessíveis.
-- O modelo funciona no desktop e no celular de referência, com reset e fallback conferidos.
+- Desktop e celular emulado validados, com reset/fallback; teste em telefone físico permanece fora da evidência disponível.
 - Nenhum botão visível é apenas decorativo ou promete função pendente.
 
 ## Fora da primeira versão

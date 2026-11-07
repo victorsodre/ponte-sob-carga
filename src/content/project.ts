@@ -1,0 +1,6 @@
+export const MIT='https://live.ocw.mit.edu/courses/1-050-solid-mechanics-fall-2004/f9a4d5764b9b0f51ffaacbdf69f7aed8_emech10_04.pdf';
+export const FHWA='https://www.fhwa.dot.gov/publications/research/infrastructure/structures/ltbp/14052/004.cfm';
+export const project={intro:'Mova a carga. Veja como a ponte responde.',video:'https://www.youtube.com/watch?v=-Aht48DzVu8',sources:[
+ {title:'Como a viga se deforma',detail:'MIT OpenCourseWare · Louis Bucciarelli · Solid Mechanics, capítulo 10, pp. 263–264, 269 e 304. Flexão elástica e carga pontual fora do centro.',url:MIT},
+ {title:'Apoios e juntas',detail:'FHWA · LTBP, capítulo 4. Apoios permitem movimentos diferentes; o desenho usa articulação e rolete como símbolos didáticos.',url:FHWA}
+],disclosure:'Ponte genérica representada por uma viga equivalente simplesmente apoiada, com rigidez constante e uma carga pontual. O caminhão é cenográfico: seus dois eixos não são duas cargas no cálculo. A deformação base é pequena e idealizada; ×1, ×40 e ×80 indicam sua ampliação visual, sem escala real. Carga relativa não é tonelagem. Não há peso próprio, vibração, ruptura ou análise transversal. Não fornece capacidade segura, dimensionamento ou diagnóstico de ponte existente. Fontes consultadas em 07/11/2026.'};

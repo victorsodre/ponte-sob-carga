@@ -2,17 +2,17 @@
 
 Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: pessoas curiosas sobre engenharia/ciência e quem acompanha a construção dos projetos. Um assunto por post, sem métricas privadas ou promessa de data.
 
-## Planejamento
+## Apresentação do projeto
 
-Condição/mídia: Pode ser usado para anunciar a intenção. Mostrar esquema identificado como plano ou referência do Fusquinha.
+Condição/mídia: Pode acompanhar uma captura real da versão local. Não anuncia uma URL pública.
 
 ```text
-O vídeo sobre pontes pode virar uma experiência em que você move a carga e observa a estrutura. Organizei o plano: uma tipologia, apoios claros e deformação ilustrativa identificada na tela.
+Transformei o tema das pontes em uma experiência 3D: você move a carga, explora os apoios e compara a forma original com a deformação ampliada. É um modelo educativo idealizado; a ampliação fica explícita na tela.
 ```
 
 ## Bastidor
 
-Condição/mídia: Usar somente depois de existir o protótipo descrito. Anexar captura real da interação; ajustar o texto ao que efetivamente funcionar.
+Condição/mídia: Versão local validada. Anexar captura real alternando a posição da carga e a comparação.
 
 ```text
 Neste protótipo da ponte, você move o veículo e compara a forma original com a deformação ampliada. A ampliação fica explícita: ela serve para enxergar o comportamento, sem fingir uma medida real.
