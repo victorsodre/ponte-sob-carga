@@ -63,4 +63,4 @@ Build estático em `dist/`, com caminhos relativos e suporte a subpasta. Sem bac
 
 **Limites:** uma viga equivalente idealizada de rigidez constante e uma carga pontual; caminhão cenográfico. Não simula distribuição entre eixos, peso próprio, impacto, vibração, ruptura ou distribuição transversal. Geometria e intensidade sem escala real. Não é ferramenta de dimensionamento ou diagnóstico. Celular emulado no Chrome, sem ensaio em telefone físico/Safari.
 
-**Próxima etapa fora da implementação:** escolher hospedagem e autorizar publicação, se desejado. Posts permanecem rascunhos para Victor publicar posteriormente.
+Aplicação publicada no GitHub Pages, com vídeo incorporado e links conferidos. Posts permanecem rascunhos para Victor publicar posteriormente.
