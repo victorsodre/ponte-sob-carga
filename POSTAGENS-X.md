@@ -7,7 +7,7 @@ Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: p
 Condição/mídia: Pode acompanhar uma captura real da versão local. Não anuncia uma URL pública.
 
 ```text
-Transformei o tema das pontes em uma experiência 3D: você move a carga, explora os apoios e compara a forma original com a deformação ampliada. É um modelo educativo idealizado; a ampliação fica explícita na tela.
+A ponte sob carga do ovictorlab já está no ar. Mova o veículo, acompanhe as reações nos apoios e compare a forma original com a deformada. A ampliação visual é explícita; não é cálculo de capacidade segura.
 ```
 
 ## Bastidor
@@ -20,10 +20,10 @@ Neste protótipo da ponte, você move o veículo e compara a forma original com 
 
 ## Lançamento
 
-Condição/mídia: Usar somente depois de publicar e validar o aplicativo. Anexar demonstração real; responder com a URL pública exata. Não usar endereço privado de repositório como link para experimentar.
+Condição/mídia: Anexar demonstração real e abrir a URL pública para conferir antes de enviar.
 
 ```text
-Ponte sob carga está no ar. Mova o veículo, explore os elementos e compare a deformação ilustrativa com a forma original. Link na resposta.
+Ponte sob carga está no ar. Mova o veículo, explore os elementos e compare a deformação ilustrativa com a forma original. https://victorsodre.github.io/ponte-sob-carga/
 ```
 
 ## Antes de colar no X
@@ -31,5 +31,5 @@ Ponte sob carga está no ar. Mova o veículo, explore os elementos e compare a d
 - Conferir se o tempo verbal corresponde ao estado real do projeto.
 - Validar duração, legibilidade e texto alternativo da mídia anexada.
 - Conferir o comprimento no compositor; os rascunhos não dependem de assinatura ou postagem longa.
-- Inserir link somente quando existir e puder ser aberto pelo público.
+- Abrir a URL pública acima antes de postar; conferir também em uma janela sem sessão.
 - Após publicar, registrar data e permalink aqui. Não automatizar envios a partir deste arquivo.

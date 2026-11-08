@@ -23,6 +23,6 @@
 
 Ao atualizar Three/Vite/React: repetir testes/build e fluxos críticos, comparar imagens e orçamento. Atualização de marca começa no guia e nos tokens oficiais. Logs e capturas ficam em `output/`, ignorado pelo Git; resumo durável em VALIDACAO.md.
 
-Nenhum deploy automático. Para publicar, preparar commit/build/URL e confirmar autorização vigente. Registrar URL e verificação quando existir; manter versão anterior para reversão por novo deploy. Repositório privado e aplicativo público são decisões independentes. Não publicar POSTAGENS-X.md automaticamente.
+Publicação autorizada em 08/11/2026, com workflow de testes/build e deploy no GitHub Pages. Procedimento, URL e reversão em [PUBLICACAO.md](PUBLICACAO.md). Não publicar POSTAGENS-X.md automaticamente.
 
 Medição pública, se solicitada, pode observar primeira interação, uso da comparação e clique no vídeo; views históricas não medem uso do aplicativo. Não coletar dados pessoais sem necessidade.

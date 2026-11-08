@@ -1,6 +1,8 @@
 # Ponte sob carga
 
-> **Desenvolvimento concluído e validado localmente em 07/11/2026.** Aplicação estática, repositório privado e sem deploy público. Projeto 10/10 da coleção.
+**[Abrir a experiência →](https://victorsodre.github.io/ponte-sob-carga/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
+
+[![Ponte sob carga — captura real da experiência](public/share.png)](https://victorsodre.github.io/ponte-sob-carga/)
 
 **O que muda numa ponte quando um veículo passa?**
 
@@ -22,7 +24,7 @@ O canal já tem um vídeo longo sobre pontes, com 239 visualizações na consult
 3. [Identidade visual do ovictorlab](docs/IDENTIDADE-VISUAL.md).
 4. [Arquitetura implementada e reaproveitamento do Fusquinha](docs/ARQUITETURA.md).
 5. [Assets e fontes verificadas](docs/ASSETS-E-FONTES.md).
-6. [Manutenção, validação e publicação futura](docs/MANUTENCAO.md).
+6. [Manutenção, validação e publicação](docs/MANUTENCAO.md).
 7. [Decisões e estado do projeto](docs/DECISOES.md).
 8. [Textos para o X](POSTAGENS-X.md) e [ordem da coleção](docs/COLECAO.md).
 
