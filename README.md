@@ -10,6 +10,16 @@ Um único tipo estrutural, com apoios, tabuleiro e carga móvel. Deformações a
 
 Direção e autoria editorial: **Victor Sodré / ovictorlab**. [Site](https://ovictorlab.com/) · [Referência Fusquinha](https://victorsodre.github.io/fusquinha/) · [Repositório](https://github.com/victorsodre/ponte-sob-carga).
 
+## Entenda no vídeo
+
+<a href="https://www.youtube.com/watch?v=-Aht48DzVu8"><img src="public/video-thumbnail.jpg" width="480" alt="Assistir: Por que as pontes não caem? (elas se mexem o tempo todo)" /></a>
+
+**[Por que as pontes não caem? (elas se mexem o tempo todo)](https://www.youtube.com/watch?v=-Aht48DzVu8)**
+
+Veja como as pontes acomodam cargas e movimentos. Depois, mova o veículo e compare a forma original com a deformação ampliada.
+
+O player incorporado fica [na página do experimento](https://victorsodre.github.io/ponte-sob-carga/#video), com carregamento por clique e sem reprodução automática.
+
 ## Por que desenvolver
 
 O canal já tem um vídeo longo sobre pontes, com 239 visualizações na consulta. A prioridade se apoia na adequação à interação e na conexão editorial, não em um grande alcance medido. Consulta em 07/11/2026. Métricas acumuladas são sinais de interesse; não comprovam demanda pelo aplicativo ou alcance orgânico.
