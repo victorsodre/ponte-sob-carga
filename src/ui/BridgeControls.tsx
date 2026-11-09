@@ -1,8 +1,8 @@
-import {Pause,Play,RotateCcw,Sun,Focus,ArrowUpRight} from 'lucide-react';import type {CSSProperties} from 'react';
+import {Pause,Play,RotateCcw,Sun,Focus,ArrowUpRight,Undo2} from 'lucide-react';import type {CSSProperties} from 'react';
 import {TEMPERATURE_RANGE,expansionMm,reactions} from '../simulation/beam.ts';import type {BeamState,Amplification} from '../simulation/beam.ts';
 import {JOINT_SHORT} from '../content/project.ts';import {DeflectionProfile} from './DeflectionProfile.tsx';
 export type ControlTab='load'|'temperature';
-type Props={tab:ControlTab;setTab:(tab:ControlTab)=>void;beam:BeamState;playing:boolean;cycling:boolean;amplification:Amplification;disabled:boolean;
+type Props={tab:ControlTab;setTab:(tab:ControlTab)=>void;beam:BeamState;playing:boolean;cycling:boolean;amplification:Amplification;disabled:boolean;jointClose:boolean;
  setPlaying:(v:boolean)=>void;setCycling:(v:boolean)=>void;setAmplification:(v:Amplification)=>void;onPosition:(v:number)=>void;onLoad:(v:number)=>void;onTemperature:(v:number)=>void;onFocusJoint:()=>void;reset:()=>void};
 
 const pct=(v:number)=>Math.round(v*100);
@@ -48,7 +48,7 @@ export function BridgeControls(p:Props){
    <div className="dock-top">
     <button className="primary" disabled={disabled} onClick={()=>p.setCycling(!p.cycling)}>{p.cycling?<Pause size={16}/>:<Sun size={16}/>} {p.cycling?'Pausar o dia':'Ver a junta respirar'}</button>
     <div className="phase-copy"><strong>{joint.label}</strong><span>{joint.text}</span></div>
-    <button className="secondary" disabled={disabled} onClick={p.onFocusJoint}><Focus size={16}/>Ver a junta de perto</button>
+    <button className="secondary" disabled={disabled} onClick={p.onFocusJoint}>{p.jointClose?<Undo2 size={16}/>:<Focus size={16}/>}{p.jointClose?'Ver a ponte inteira':'Ver a junta de perto'}</button>
     {amplificationControl}{resetButton}
    </div>
    <div className="timeline"><label htmlFor="temperature">Temperatura do aço <span>{signed(temperature)} °C</span></label><input id="temperature" type="range" min={-TEMPERATURE_RANGE} max={TEMPERATURE_RANGE} step="1" value={temperature} aria-valuetext={`${signed(temperature)} graus em relação à referência; ${joint.label.toLocaleLowerCase('pt-BR')}`} style={{'--progress':`${(temperature+TEMPERATURE_RANGE)/(2*TEMPERATURE_RANGE)*100}%`} as CSSProperties} onChange={e=>p.onTemperature(Number(e.target.value))}/></div>

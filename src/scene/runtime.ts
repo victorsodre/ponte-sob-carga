@@ -9,8 +9,8 @@ import { saveSceneImage } from './capture.ts';
 import type { SceneHandle, ViewState } from './types.ts';
 
 const LANDSCAPE = { bounds: new T.Box3(new T.Vector3(-10.6, -.9, -2.9), new T.Vector3(10.6, 7.4, 2.9)), direction: new T.Vector3(5, 5, 22) };
-// Em retrato só o vão e os encontros entram no quadro, num ângulo de três quartos que dá altura à ponte.
-const PORTRAIT = { bounds: new T.Box3(new T.Vector3(-8.9, -.4, -2.6), new T.Vector3(8.9, 7.4, 2.6)), direction: new T.Vector3(9, 6, 16) };
+// Em retrato a ponte entra inteira, com os dois encontros até o fim das alas, num ângulo mais frontal e alto.
+const PORTRAIT = { bounds: new T.Box3(new T.Vector3(-12.6, -1.2, -2.6), new T.Vector3(12.6, 5.6, 2.6)), direction: new T.Vector3(4, 7, 20) };
 const JOINT_DIRECTION = new T.Vector3(3, 8, 7);
 /** Movimento máximo, em pixels, para um toque ainda contar como clique e não como arrasto. */
 const TAP_SLOP = { mouse: 5, touch: 10 };
@@ -36,7 +36,7 @@ export function createScene(host: HTMLElement, onSelect: (id: string) => void, o
   const rim = new T.DirectionalLight('#b4d3ff', 1.9);rim.position.set(-6, 5, -5);scene.add(rim);
   const model = createModel();scene.add(model.root);
   const highlight = new T.BoxHelper(new T.Object3D(), '#ffd21f');highlight.visible = false;scene.add(highlight);
-  let state: ViewState = { beam: initialState(), shapeView: 'compare', amplification: 80, selected: null, isolated: false, wireframe: false };
+  let state: ViewState = { beam: initialState(), shapeView: 'compare', amplification: 80, selected: null, isolated: false, wireframe: false, jointClose: false };
   let disposed = false, active = false, contextLost = false, last = -Infinity;
   let previousPose: {position: T.Vector3; target: T.Vector3} | null = null;
   const layout = () => camera.aspect < 1.1 ? PORTRAIT : LANDSCAPE;
@@ -109,6 +109,8 @@ export function createScene(host: HTMLElement, onSelect: (id: string) => void, o
       applyBeam(model, state.beam, state.shapeView, state.amplification);
       model.helpers.visible = !state.isolated;model.site.visible = !state.isolated;
       for (const part of model.parts) part.group.visible = !state.isolated || part.id === state.selected;
+      // De perto na junta, o caminhão sai de cena: parado no fim do vão, ele cobriria o pente.
+      if (state.jointClose) {model.vehicle.visible = false;model.force.group.visible = false;}
       if (previous.wireframe !== state.wireframe) model.root.traverse(o => {if (o instanceof T.Mesh) for (const m of Array.isArray(o.material) ? o.material : [o.material]) if (m instanceof T.MeshStandardMaterial) m.wireframe = state.wireframe;});
       const r = reactions(state.beam.loadPosition, state.beam.loadLevel);leftLabel.textContent = percent(r.left);rightLabel.textContent = percent(r.right);
       const selected = selectedPart();highlight.visible = Boolean(selected) && !state.isolated;
