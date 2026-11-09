@@ -218,6 +218,7 @@ dialog::backdrop{background:#050713c9;backdrop-filter:blur(7px)}
  .profile figcaption{font-size:12px;text-align:right}
  .dock-top .secondary{order:5;flex-basis:100%;justify-content:center;font-size:14px}
  .timeline>label,.load-control label{font-size:12px}
+ input[type=range]{height:44px}
  .phase-markers button{font-size:12px}
  .load-control{grid-template-columns:1fr;gap:4px}
  .load-control small{font-size:12px}

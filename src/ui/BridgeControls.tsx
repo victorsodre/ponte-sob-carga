@@ -14,7 +14,7 @@ export function placeLabel(position:number){return position<.05?'Sobre o apoio e
 export function loadExplanation(beam:BeamState){
  if(beam.loadLevel<=0)return 'Sem carga, a viga não dobra.';
  const near=Math.min(beam.loadPosition,1-beam.loadPosition),r=reactions(beam.loadPosition,1);
- if(near<.15)return `Perto do apoio, ${pct(Math.max(r.left,r.right))}% da carga desce direto para ele e sobra pouco braço de alavanca: a viga quase não dobra.`;
+ if(near<.15)return `Perto do apoio, ${pct(Math.max(r.left,r.right))}% da carga desce direto para ele e sobra pouco braço de alavanca: a viga dobra bem menos do que com a carga no centro.`;
  if(near>.45)return 'No centro, o braço de alavanca até os apoios é o maior possível: é onde a viga mais dobra.';
  return 'Quanto mais longe dos apoios, maior o braço de alavanca e mais a viga dobra.';
 }
