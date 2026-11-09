@@ -1,6 +1,6 @@
-type Video = { id: string; title: string; context: string; related: boolean; format: 'portrait' | 'landscape'; duration: string };
+import type { LabVideo } from '../kit/VideoSection.tsx';
 
-export const video: Video = {
+export const video: LabVideo = {
   "id": "-Aht48DzVu8",
   "title": "Por que as pontes não caem? (elas se mexem o tempo todo)",
   "context": "Veja como as pontes acomodam cargas e movimentos. Depois, mova o veículo e compare a forma original com a deformação ampliada.",

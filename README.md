@@ -2,7 +2,7 @@
 
 **[Abrir a experiência →](https://victorsodre.github.io/ponte-sob-carga/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
 
-[![Ponte sob carga — captura real da experiência](public/share.png)](https://victorsodre.github.io/ponte-sob-carga/)
+[![Ponte sob carga — captura real da experiência](public/share.jpg)](https://victorsodre.github.io/ponte-sob-carga/)
 
 **O que muda numa ponte quando um veículo passa?**
 

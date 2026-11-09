@@ -1,8 +1,9 @@
-import { VideoSection } from './ui/VideoSection.tsx';
-import { CollectionNav } from './ui/CollectionNav.tsx';
+import { video } from './content/video.ts';
+import { VideoSection } from './kit/VideoSection.tsx';
+import { CollectionNav } from './kit/CollectionNav.tsx';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Box, ChevronRight, Download, Focus, Layers3, Maximize, Minus, Plus, Search, X } from 'lucide-react';
-import { Brand } from './ui/Brand.tsx';
+import { Brand } from './kit/Brand.tsx';
 import { Sources } from './ui/Sources.tsx';
 import { CycleControls } from './ui/CycleControls.tsx';
 import { createScene } from './scene/runtime.ts';
@@ -70,7 +71,7 @@ export function App() {
       <div className="mobile-actions"><button onClick={() => setDrawer(true)}><Layers3 size={16}/>Conjuntos <span>6</span></button><button disabled={!parts.length || Boolean(error)} onClick={() => guide(0)}>Conhecer a estrutura <ArrowRight size={16}/></button></div>
       <CycleControls beam={beam} playing={playing} amplification={amplification} disabled={!parts.length||Boolean(error)} setPlaying={value=>{if(value&&beam.loadPosition>=1)setBeam(s=>({...s,loadPosition:0}));setPlaying(value);setIsolated(false);}} setAmplification={setAmplification} onPosition={value=>{setPlaying(false);setIsolated(false);setBeam(s=>({...s,loadPosition:value}));}} onLoad={value=>setBeam(s=>({...s,loadLevel:value}))} reset={reset}/>
       <div className="reaction-strip" aria-label="Distribuição da carga"><span>APOIO ESQUERDO <b>{(reactions(beam.loadPosition,beam.loadLevel).left*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}%</b></span><span>APOIO DIREITO <b>{(reactions(beam.loadPosition,beam.loadLevel).right*100).toLocaleString('pt-BR',{maximumFractionDigits:1})}%</b></span><small>DA CARGA DE REFERÊNCIA · SOMENTE O VEÍCULO</small></div>
-    </main><VideoSection/><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={() => setSources(true)}>Como funciona · Fontes e créditos <ArrowUpRight size={13}/></button><CollectionNav current="ponte-sob-carga"/></footer>
+    </main><VideoSection video={video}/><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={() => setSources(true)}>Como funciona · Fontes e créditos <ArrowUpRight size={13}/></button><CollectionNav current="ponte-sob-carga"/></footer>
     <Sources open={sources} onClose={() => setSources(false)}/><dialog ref={dialog} className="parts-dialog" aria-label="Conjuntos da ponte" onClose={() => setDrawer(false)}><div className="dialog-top"><span className="eyebrow">CONHEÇA A ESTRUTURA</span><button className="icon-button" aria-label="Fechar conjuntos" onClick={() => setDrawer(false)}><X size={18}/></button></div>{list()}</dialog><span className="sr-only" role="status" aria-live="polite">{notice}</span>
   </div>;
 }
