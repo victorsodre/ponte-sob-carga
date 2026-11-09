@@ -221,8 +221,8 @@ dialog::backdrop{background:#050713c9;backdrop-filter:blur(7px)}
  .dock-top{flex-wrap:wrap;gap:10px 8px}
  .dock-top .primary{flex:1;order:1;font-size:14px}
  .amplification-control{order:2;flex-direction:row;align-items:center;gap:6px}
- .dock-top .icon-button{order:3}
- .phase-copy{order:4;flex-basis:100%}
+ .dock-top .icon-button{order:4;align-self:flex-start;margin-top:-10px}
+ .phase-copy{order:4;flex:1 1 calc(100% - 52px);min-width:0}
  .phase-copy strong{font-size:14px}
  .phase-copy span{font-size:14px}
  .profile{order:5;flex-basis:100%;flex-direction:row;justify-content:space-between;gap:12px}
