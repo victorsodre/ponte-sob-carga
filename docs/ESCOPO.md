@@ -13,8 +13,8 @@ Um único tipo estrutural, com apoios, tabuleiro e carga móvel. Deformações a
 - Tabuleiro
 - Vigas ou elementos da tipologia escolhida
 - Apoios
-- Pilares
-- Juntas
+- Encontros e fundações (eram “Pilares”; numa ponte de um vão, os apoios das pontas são encontros)
+- Juntas de dilatação
 - Veículo/carga cenográfica
 
 Seis grupos implementados em geometria autoral. Tipologia escolhida: ponte de vigas representada como viga equivalente Euler–Bernoulli, simplesmente apoiada e com rigidez constante. APURACAO.md registra as hipóteses.
@@ -26,12 +26,13 @@ Seis grupos implementados em geometria autoral. Tipologia escolhida: ponte de vi
 | Mover carga | Desloca o veículo ao longo do vão e atualiza a demonstração. |
 | Destacar estrutura | Seleciona os elementos e sua função. |
 | Comparar deformação | Alterna forma original e deformação ilustrativa com fator de ampliação visível. |
+| Temperatura (09/11/2026) | ΔT do aço ±15 °C e ciclo do dia: a junta do lado do rolete abre e fecha, com a mesma ampliação visível. |
 
 Base de exploração: órbita, zoom, seleção por lista ou clique, isolamento, reenquadrar e reset. Desmontagem e corte só se aplicam aos conjuntos para os quais forem úteis e tecnicamente coerentes. Som, malha e captura são complementos, posteriores à clareza do mecanismo.
 
 ## Estado do mecanismo
 
-`loadPosition e loadLevel determinam uma configuração estável; reset restaura carga e forma; animation não altera hipóteses do modelo.`
+`loadPosition, loadLevel e temperature determinam uma configuração estável; reset restaura carga e forma; animation não altera hipóteses do modelo.`
 
 ## Critérios específicos de conclusão
 

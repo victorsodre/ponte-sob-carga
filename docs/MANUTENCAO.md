@@ -4,7 +4,7 @@
 
 1. Ler DECISOES.md, APURACAO.md e VALIDACAO.md. Atualizar fontes antes de mudar fatos/equações.
 2. Executar `npm ci`, `npm test`, `npm run check`, `npm run build`; revisar diff e créditos.
-3. Em desktop e móvel: posição nos dois apoios e no centro, intensidade 0/50/100%, vistas original/deformada/comparação, fatores 1/40/80, pausa/fim/reset.
+3. Em desktop e móvel: posição nos dois apoios e no centro, intensidade 0/50/100%, vistas original/deformada/comparação, fatores 1/40/80, pausa/fim/reset. Aba Temperatura: −15/0/+15 °C, ciclo do dia, pausa, “Ver a junta de perto”; pentes sem colisão. Girar, redimensionar e entrar em tela cheia sem perder a órbita; tocar no modelo durante a travessia não a pausa; a página rola por cima do canvas no celular.
 4. Conferir equilíbrio: reações somam a intensidade relativa; carga no centro distribui igualmente. Ampliar a imagem não muda reações. No zero, deformação e setas de força somem.
 5. Selecionar/isolar/reaproximar/retornar os seis grupos, buscar com acentos, completar tour, usar clique e teclado. Verificar movimento reduzido.
 6. Conferir cena/capturas reais em 1440×900, 390×844, 360×800 e horizontal. Registrar aparelho/navegador; emulação não substitui teste físico.
@@ -13,7 +13,7 @@
 
 ## Invariantes de regressão
 
-- Apoios sem deslocamento vertical; rotação livre na idealização. Acessos/pilares não deformam.
+- Apoios sem deslocamento vertical; rotação livre na idealização. Acessos/encontros não deformam. Apoio fixo à esquerda não desliza; a dilatação parte dele.
 - Fórmula contínua na carga e simétrica quando carga é espelhada; solução central `-β/48`, linearidade e relação momento/curvatura conferidas em testes.
 - Deformação parte dos vértices de origem, sem deriva. Referência tracejada permanece na forma original.
 - Caminhão é cenográfico; não apresentar resultado como cálculo de duas cargas de eixo, tonelagem real ou capacidade segura.

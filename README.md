@@ -40,7 +40,7 @@ O canal já tem um vídeo longo sobre pontes, com 239 visualizações na consult
 
 ## Executar e conferir
 
-Node ≥22.18. Dependências fixadas no lockfile.
+Node ≥22.18 (no Mac de Victor, use o Node do nvm: `export PATH=$HOME/.nvm/versions/node/v22.22.2/bin:$PATH`). Dependências fixadas no lockfile.
 
 ```sh
 npm ci
@@ -57,7 +57,9 @@ Build estático em `dist/`, com caminhos relativos e suporte a subpasta. Sem bac
 
 - Carga móvel por slider, três posições e travessia com pausa e parada no fim. Intensidade relativa 0–100%.
 - Forma original, deformada e comparação com referência tracejada. Ampliação ×1, ×40 ou ×80, sempre identificada.
-- Reações relativas dos dois apoios, atualizadas por equilíbrio estático. Sem cálculo de tonelagem ou capacidade segura.
+- Reações relativas dos dois apoios, atualizadas por equilíbrio estático e mostradas na cena. Perfil da flecha explica por que a viga quase não dobra com a carga perto do apoio. Sem cálculo de tonelagem ou capacidade segura.
+- Aba Temperatura: o aço cresce no calor e encolhe no frio (α do WisDOT), a junta de pente respira e o rolete desliza; ciclo do dia ilustrativo.
+- Margens, rio e encontros com aterro sob os acessos.
 - Seis conjuntos, seleção por lista/clique, isolamento, câmera, busca, tour, malha, reset e PNG horizontal/vertical.
 - Teclado, movimento reduzido, pausa em aba oculta, renderização sob demanda e explicações acessíveis sem WebGL. Sem áudio ou autoplay.
 
